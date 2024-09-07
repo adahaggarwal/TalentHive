@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
                 android:layout_marginBottom="51dp"
-                android:background="@drawable/cr4b1a174d"
+                android:background="@drawable/btnlay"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:paddingVertical="19dp">
