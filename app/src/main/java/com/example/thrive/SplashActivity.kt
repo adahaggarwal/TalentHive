@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
 
         val splash_time: Long = 3000
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashActivity,MainActivity::class.java)
+            val intent = Intent(this@SplashActivity,Pager1::class.java)
             startActivity(intent)
             finish()
         },splash_time)
