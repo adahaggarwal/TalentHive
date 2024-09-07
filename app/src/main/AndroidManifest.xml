@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Thrive"
         tools:targetApi="31">
         <activity
+            android:name=".swapp"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPass"
             android:exported="false" />
         <activity
@@ -32,7 +35,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
