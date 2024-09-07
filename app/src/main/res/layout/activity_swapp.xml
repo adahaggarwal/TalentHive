@@ -153,9 +153,12 @@
                 android:id="@+id/r1gtmeyjzz0k"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
+                
                 android:layout_marginHorizontal="120dp"
-                android:background="@drawable/cr100bc9c9c9"
-                android:orientation="vertical"></LinearLayout>
+
+                android:orientation="vertical">
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

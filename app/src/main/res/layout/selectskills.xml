@@ -38,8 +38,9 @@
                     android:id="@+id/bottomLine"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:background="@drawable/cr4be8e9f1"
                     android:orientation="vertical"/>
+
+<!--                    android:background="@drawable/cr4be8e9f1"-->
             </LinearLayout>
 
             <!-- Title and subtitle -->

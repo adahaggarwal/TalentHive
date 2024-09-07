@@ -42,7 +42,7 @@
                     android:layout_marginHorizontal="58dp"
                     android:layout_marginTop="-40dp"
                     android:layout_marginBottom="27dp"
-                    android:background="@drawable/cr25b1c69ff"
+
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:elevation="40dp"
