@@ -11,9 +11,9 @@
         android:id="@+id/imageView2"
         android:layout_width="281dp"
         android:layout_height="276dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="64dp"
         android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
