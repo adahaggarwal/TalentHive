@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Top horizontal lines -->
+            <LinearLayout
+                android:id="@+id/lineContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="46dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/topLine"
+                    android:layout_width="163dp"
+                    android:layout_height="8dp"
+                    android:background="#042d5b"
+                    android:orientation="vertical"/>
+
+                <LinearLayout
+                    android:id="@+id/bottomLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@drawable/cr4be8e9f1"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+
+            <!-- Title and subtitle -->
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="21dp"
+                android:text="Select Your Skills"
+                android:textColor="#1F2024"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/subtitleText"
+                android:textColor="#71727A"
+                android:textSize="14sp"
+                android:layout_marginBottom="41dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your interests."/>
+
+            <!-- Skill 1 -->
+            <LinearLayout
+                android:id="@+id/skillUI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="41dp"
+                android:background="#eeeee4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="17dp"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:id="@+id/skillUIText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="User Interface"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/skillUIIcon"
+                    android:layout_width="12dp"
+                    android:layout_height="11dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+            </LinearLayout>
+
+            <!-- Skill 2 -->
+            <LinearLayout
+                android:id="@+id/skillUX"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#eeeee4"
+                android:paddingVertical="21dp"
+                android:paddingHorizontal="17dp"
+                android:layout_marginBottom="41dp">
+
+                <TextView
+                    android:id="@+id/skillUXText"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Experience"/>
+            </LinearLayout>
+
+            <!-- Skill 3 -->
+            <LinearLayout
+                android:id="@+id/skillResearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#eeeee4"
+                android:gravity="center_vertical"
+                android:paddingVertical="20dp"
+                android:paddingHorizontal="17dp"
+                android:layout_marginBottom="41dp">
+
+                <TextView
+                    android:id="@+id/skillResearchText"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="User Research"/>
+
+                <ImageView
+                    android:id="@+id/skillResearchIcon"
+                    android:layout_width="12dp"
+                    android:layout_height="11dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:scaleType="fitXY"/>
+            </LinearLayout>
+
+            <!-- Skill 4 -->
+            <LinearLayout
+                android:id="@+id/skillWriting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#eeeee4"
+                android:paddingVertical="21dp"
+                android:paddingHorizontal="17dp"
+                android:layout_marginBottom="41dp">
+
+                <TextView
+                    android:id="@+id/skillWritingText"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UX Writing"/>
+            </LinearLayout>
+
+            <!-- Skill 5 -->
+            <LinearLayout
+                android:id="@+id/skillTesting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#eeeee4"
+                android:paddingVertical="21dp"
+                android:paddingHorizontal="17dp"
+                android:layout_marginBottom="41dp">
+
+                <TextView
+                    android:id="@+id/skillTestingText"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Testing"/>
+            </LinearLayout>
+
+            <!-- Skill 6 -->
+            <LinearLayout
+                android:id="@+id/skillServiceDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#eeeee4"
+                android:paddingVertical="21dp"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/skillServiceDesignText"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Service Design"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
