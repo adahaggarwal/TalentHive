@@ -5,16 +5,20 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.thrive.R.*
 
 class Pager1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.pager2)
+        setContentView(layout.pager1)
 
-        var next1 = findViewById<TextView>(R.id.next1)
+
+        val next1 = findViewById<TextView>(R.id.n1)
         next1.setOnClickListener(){
             val intent = Intent(this, Pager2::class.java)
+            startActivity(intent)
+
 
         }
 
