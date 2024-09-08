@@ -87,13 +87,6 @@
                     android:text="User Interface"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
-
-                <ImageView
-                    android:id="@+id/skillUIIcon"
-                    android:layout_width="12dp"
-                    android:layout_height="11dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher" />
             </LinearLayout>
 
             <!-- Skill 2 -->
@@ -136,13 +129,6 @@
                     android:text="User Research"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
-
-                <ImageView
-                    android:id="@+id/skillResearchIcon"
-                    android:layout_width="12dp"
-                    android:layout_height="11dp"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/ic_launcher" />
             </LinearLayout>
 
             <!-- Skill 4 -->
@@ -207,10 +193,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bttnlay"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/btnlay"
-                android:backgroundTint="@color/bblue"
-                android:text="Done" />
+                android:text="Done"/>
+
 
         </LinearLayout>
     </ScrollView>
