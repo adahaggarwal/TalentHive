@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="41dp"
-                android:background="#eeeee4"
+                android:background="@drawable/cr4bffffff"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingHorizontal="17dp"
@@ -101,19 +101,19 @@
                 android:id="@+id/skillUX"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="41dp"
+                android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
-                android:background="#eeeee4"
-                android:paddingVertical="21dp"
                 android:paddingHorizontal="17dp"
-                android:layout_marginBottom="41dp">
+                android:paddingVertical="21dp">
 
                 <TextView
                     android:id="@+id/skillUXText"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="User Experience"/>
+                    android:text="User Experience"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Skill 3 -->
@@ -121,28 +121,28 @@
                 android:id="@+id/skillResearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#eeeee4"
+                android:layout_marginBottom="41dp"
+                android:background="@drawable/cr4bffffff"
                 android:gravity="center_vertical"
-                android:paddingVertical="20dp"
+                android:orientation="horizontal"
                 android:paddingHorizontal="17dp"
-                android:layout_marginBottom="41dp">
+                android:paddingVertical="20dp">
 
                 <TextView
                     android:id="@+id/skillResearchText"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="User Research"/>
+                    android:text="User Research"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:id="@+id/skillResearchIcon"
                     android:layout_width="12dp"
                     android:layout_height="11dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:scaleType="fitXY"/>
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
             </LinearLayout>
 
             <!-- Skill 4 -->
@@ -150,19 +150,19 @@
                 android:id="@+id/skillWriting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="41dp"
+                android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
-                android:background="#eeeee4"
-                android:paddingVertical="21dp"
                 android:paddingHorizontal="17dp"
-                android:layout_marginBottom="41dp">
+                android:paddingVertical="21dp">
 
                 <TextView
                     android:id="@+id/skillWritingText"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="UX Writing"/>
+                    android:text="UX Writing"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Skill 5 -->
@@ -170,19 +170,19 @@
                 android:id="@+id/skillTesting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="41dp"
+                android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
-                android:background="#eeeee4"
-                android:paddingVertical="21dp"
                 android:paddingHorizontal="17dp"
-                android:layout_marginBottom="41dp">
+                android:paddingVertical="21dp">
 
                 <TextView
                     android:id="@+id/skillTestingText"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="User Testing"/>
+                    android:text="User Testing"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Skill 6 -->
@@ -190,26 +190,27 @@
                 android:id="@+id/skillServiceDesign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
-                android:background="#eeeee4"
-                android:paddingVertical="21dp"
-                android:paddingHorizontal="16dp">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="21dp">
 
                 <TextView
                     android:id="@+id/skillServiceDesignText"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Service Design"/>
+                    android:text="Service Design"
+                    android:textColor="#1F2024"
+                    android:textSize="14sp" />
             </LinearLayout>
-            
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/bblue"
                 android:layout_marginTop="10dp"
-                android:text="Done"/>
+                android:background="@drawable/btnlay"
+                android:backgroundTint="@color/bblue"
+                android:text="Done" />
 
         </LinearLayout>
     </ScrollView>
