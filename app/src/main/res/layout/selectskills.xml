@@ -33,7 +33,7 @@
                     android:layout_height="8dp"
                     android:orientation="vertical">
                     <ProgressBar
-                        android:layout_width="150dp"
+                        android:layout_width="175dp"
                         android:layout_height="wrap_content" 
                         android:background="@color/bblue"/>
                 </LinearLayout>
@@ -54,18 +54,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="21dp"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Select Your Skills"
                 android:textColor="#1F2024"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/subtitleText"
-                android:textColor="#71727A"
-                android:textSize="14sp"
-                android:layout_marginBottom="41dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choose your interests."/>
+                android:layout_marginBottom="41dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Choose your interests."
+                android:textColor="#71727A"
+                android:textSize="14sp" />
 
             <!-- Skill 1 -->
             <LinearLayout
@@ -84,6 +86,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
                     android:text="User Interface"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -104,6 +107,7 @@
                     android:id="@+id/skillUXText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:text="User Experience"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -126,6 +130,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/poppins"
                     android:text="User Research"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -146,6 +151,7 @@
                     android:id="@+id/skillWritingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:text="UX Writing"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -166,6 +172,7 @@
                     android:id="@+id/skillTestingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:text="User Testing"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -185,6 +192,7 @@
                     android:id="@+id/skillServiceDesignText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:text="Service Design"
                     android:textColor="#1F2024"
                     android:textSize="14sp" />
@@ -193,9 +201,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bttnlay"
                 android:layout_marginTop="10dp"
-                android:text="Done"/>
+                android:background="@drawable/bttnlay"
+                android:fontFamily="@font/poppins"
+                android:text="Done" />
 
 
         </LinearLayout>
