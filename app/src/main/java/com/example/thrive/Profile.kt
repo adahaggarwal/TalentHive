@@ -1,6 +1,8 @@
 package com.example.thrive
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -19,5 +21,13 @@ class Profile : AppCompatActivity() {
 
         progressBar.progress = 72 // set the progress
         progressText.text = "${progressBar.progress}%"
+
+        val addsk = findViewById<Button>(R.id.addsk)
+        addsk.setOnClickListener(){
+            val intent = Intent(this, userprofile::class.java)
+            startActivity(intent)
+        }
     }
+
+
 }
