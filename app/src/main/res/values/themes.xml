@@ -6,5 +6,9 @@
         <item name="colorPrimaryContainer">@color/bblue</item>
     </style>
 
-    <style name="Theme.Thrive" parent="Base.Theme.Thrive" />
+    <style name="Theme.Thrive" parent="Base.Theme.Thrive" >
+<!--        <item name="colorPrimary">@color/white</item>-->
+    </style>
+
+
 </resources>
