@@ -35,7 +35,7 @@
             app:srcCompat="@drawable/notify" />
 
         <LinearLayout
-            android:id="@+id/rhne2cg7af5"
+            android:id="@+id/log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="28dp"

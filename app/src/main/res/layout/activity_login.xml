@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B8C9E7"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <ScrollView
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#E1E6F6"
+        android:background="@color/white"
         android:clipToPadding="false"
         android:paddingTop="17dp"
         android:paddingBottom="84dp">
@@ -57,8 +57,8 @@
 
                     <ImageView
                         android:id="@+id/ronlr6l0oso"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_marginHorizontal="2dp"
                         android:layout_marginBottom="2dp"
                         android:scaleType="fitXY"
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginBottom="35dp"
                 android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -91,7 +91,7 @@
 
                 <ImageView
                     android:id="@+id/r1xym8rbp0kp"
-                    android:layout_width="16dp"
+                    android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginEnd="12dp"
                     android:scaleType="fitXY"
@@ -117,29 +117,29 @@
 
                 <ImageView
                     android:id="@+id/rfhd60rfti55"
-                    android:layout_width="18dp"
-                    android:layout_height="13dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/eye" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/r4xifg491v78"
+                android:id="@+id/ftgpass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="29dp"
-                android:layout_marginBottom="22dp"
+                android:layout_marginBottom="35dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Forgot Password?"
                 android:textColor="#1A174D"
                 android:textSize="12sp" />
 
             <LinearLayout
-                android:id="@+id/rhne2cg7af5"
+                android:id="@+id/log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
-                android:layout_marginBottom="51dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/btnlay"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
@@ -171,7 +171,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="36dp"
-                android:layout_marginBottom="77dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -202,11 +203,6 @@
                         android:textColor="#5E72E4"
                         android:textSize="14sp" />
                 </LinearLayout>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
 
                 <LinearLayout
                     android:id="@+id/rasjfhidig2a"
@@ -242,44 +238,29 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/rip04aevmim"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="28dp"
-                android:background="#1A8898AA"
-                android:orientation="vertical"></LinearLayout>
-
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
+            <LinearLayout
                 android:id="@+id/rpayedbdkdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="88dp"
-                android:gravity="center_vertical"
+
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/r654201zjqrt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/poppins"
                     android:text="Create An Account"
                     android:textColor="#575757"
                     android:textSize="14sp" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
                 <TextView
-                    android:id="@+id/rnghhjmg9ujf"
+                    android:id="@+id/si"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins"
                     android:text="Sign Up"
                     android:textColor="#1A174D"
                     android:textSize="14sp" />
