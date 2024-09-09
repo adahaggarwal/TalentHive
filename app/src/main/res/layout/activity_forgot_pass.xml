@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/bg"
+        android:background="@color/white"
         android:clipToPadding="false"
         android:paddingLeft="29dp"
         android:paddingTop="17dp"
@@ -29,6 +29,7 @@
                 android:id="@+id/r5f9m8hp3z2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:layout_marginBottom="37dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_semibold"
@@ -36,36 +37,20 @@
                 android:textColor="#000000"
                 android:textSize="36sp" />
 
-            <LinearLayout
-                android:id="@+id/rrnppbihvqkc"
+            <EditText
+                android:id="@+id/editTextTextEmailAddress3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="29dp"
-                android:layout_marginBottom="29dp"
-                android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="21dp">
-
-                <ImageView
-                    android:id="@+id/rj6vhlhr2da"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp"
-                    android:layout_marginEnd="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/baseline_email_24" />
-
-                <TextView
-                    android:id="@+id/rxgpcuyar8c"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Enter your email address"
-                    android:textColor="#676767"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/cr4bffffff"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:ems="10"
+                android:hint="  Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/rmv1y5rpmhel"

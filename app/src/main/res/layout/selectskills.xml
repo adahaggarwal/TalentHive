@@ -10,13 +10,13 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <!-- Top horizontal lines -->
@@ -32,19 +32,20 @@
                     android:layout_width="163dp"
                     android:layout_height="8dp"
                     android:orientation="vertical">
+
                     <ProgressBar
                         android:layout_width="175dp"
-                        android:layout_height="wrap_content" 
-                        android:background="@color/bblue"/>
+                        android:layout_height="wrap_content"
+                        android:background="@color/bblue" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/bottomLine"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical" />
 
-<!--                    android:background="@drawable/cr4be8e9f1"-->
+                <!--                    android:background="@drawable/cr4be8e9f1"-->
             </LinearLayout>
 
             <!-- Title and subtitle -->
@@ -74,6 +75,8 @@
                 android:id="@+id/skillUI"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="41dp"
                 android:background="@drawable/cr4bffffff"
                 android:gravity="center_vertical"
@@ -97,6 +100,8 @@
                 android:id="@+id/skillUX"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="41dp"
                 android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
@@ -118,6 +123,8 @@
                 android:id="@+id/skillResearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="41dp"
                 android:background="@drawable/cr4bffffff"
                 android:gravity="center_vertical"
@@ -141,6 +148,8 @@
                 android:id="@+id/skillWriting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="41dp"
                 android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
@@ -162,6 +171,8 @@
                 android:id="@+id/skillTesting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="41dp"
                 android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
@@ -183,6 +194,9 @@
                 android:id="@+id/skillServiceDesign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/cr4bffffff"
                 android:orientation="vertical"
                 android:paddingHorizontal="16dp"
@@ -199,12 +213,12 @@
             </LinearLayout>
 
             <Button
+                style="@style/CustomButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@null"
-                style="@style/CustomButtonStyle"
                 android:background="@drawable/btnlay"
+                android:backgroundTint="@null"
                 android:fontFamily="@font/poppins"
                 android:text="Done" />
 
