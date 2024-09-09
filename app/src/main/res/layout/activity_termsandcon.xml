@@ -57,6 +57,8 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btnlay"
                 android:text="AGREE"
+                android:backgroundTint="@null"
+                style="@style/CustomButtonStyle"
                 android:textColor="@color/white" />
 
             <Button
@@ -68,11 +70,13 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/scrollbtn"
-                android:backgroundTint="#FFFFFF"
+
+                android:backgroundTint="@null"
+                style="@style/CustomButtonStyle"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Scroll to Top"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

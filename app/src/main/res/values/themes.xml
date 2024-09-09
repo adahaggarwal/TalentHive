@@ -1,14 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme without primary color. -->
     <style name="Base.Theme.Thrive" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/bblue</item>
-        <item name="colorPrimaryContainer">@color/bblue</item>
+        <!-- You can customize light and dark themes without specifying a primary color. -->
     </style>
 
-    <style name="Theme.Thrive" parent="Base.Theme.Thrive" >
-<!--        <item name="colorPrimary">@color/white</item>-->
+    <!-- Define your main app theme, inheriting from the base, without colorPrimary -->
+    <style name="Theme.Thrive" parent="Base.Theme.Thrive">
+        <!-- No colorPrimary is defined to prevent any default color from being applied -->
     </style>
 
-
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <!-- Disable background tint -->
+        <item name="backgroundTint">@null</item>
+        <!-- Optional: you can specify other button properties here -->
+    </style>
 </resources>
