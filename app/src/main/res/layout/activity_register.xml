@@ -168,7 +168,7 @@ android:layout_height="match_parent">
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/r5qyketjw3ey"
+                android:id="@+id/cacc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="29dp"
@@ -180,7 +180,7 @@ android:layout_height="match_parent">
                 android:paddingVertical="20dp">
 
                 <TextView
-                    android:id="@+id/r51qs0jkjl05"
+                    android:id="@+id/ca1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"

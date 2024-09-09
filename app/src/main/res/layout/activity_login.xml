@@ -135,7 +135,7 @@
                 android:textSize="12sp" />
 
             <LinearLayout
-                android:id="@+id/rhne2cg7af5"
+                android:id="@+id/la1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
@@ -146,7 +146,7 @@
                 android:paddingVertical="19dp">
 
                 <TextView
-                    android:id="@+id/rrpeu1o54agl"
+                    android:id="@+id/la2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
