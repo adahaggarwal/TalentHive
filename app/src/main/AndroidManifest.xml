@@ -41,7 +41,8 @@
             android:exported="false" />
         <activity
             android:name=".Pager2"
-            android:exported="false"></activity>
+            android:exported="false">
+        </activity>
         <activity
             android:name=".Register"
             android:exported="false" />
