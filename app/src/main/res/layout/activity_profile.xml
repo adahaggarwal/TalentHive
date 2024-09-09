@@ -16,7 +16,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -100,6 +103,7 @@
 
                 <Button
                     android:id="@+id/comp"
+                    style="@style/CustomButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -108,7 +112,6 @@
                     android:layout_weight="1"
                     android:background="@drawable/btnlay"
                     android:backgroundTint="@null"
-                    style="@style/CustomButtonStyle"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Complete Your Profile" />
 
