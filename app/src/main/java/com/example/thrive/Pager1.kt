@@ -14,13 +14,13 @@ class Pager1 : AppCompatActivity() {
         setContentView(layout.pager1)
 
 
-//        val next1 = findViewById<TextView>(R.id.nex)
-//        next1.setOnClickListener(){
-//            val intent = Intent(this, Pager2::class.java)
-//            startActivity(intent)
-//
-//
-//        }
+        val next1 = findViewById<TextView>(R.id.nex)
+        next1.setOnClickListener(){
+            val intent = Intent(this, Pager2::class.java)
+            startActivity(intent)
+
+
+        }
 
     }
 }

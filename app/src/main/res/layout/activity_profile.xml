@@ -6,6 +6,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".Profile">
 
     <LinearLayout
@@ -107,6 +108,40 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Complete Your Profile" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/inv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="51dp"
+            android:background="@drawable/invlay"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingVertical="19dp">
+
+            <TextView
+                android:id="@+id/t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Invite Friends and get upto $100"
+                android:textColor="@color/bblue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Introduce friends to the fastest way to get things done"
+                android:textAlignment="center" />
         </LinearLayout>
 
 
