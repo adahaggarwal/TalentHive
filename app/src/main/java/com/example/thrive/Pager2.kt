@@ -18,6 +18,19 @@ class Pager2 : AppCompatActivity() {
             startActivity(intent)
 
 
+
+
+        }
+        val prev4 = findViewById<TextView>(R.id.prev4)
+        prev4.setOnClickListener() {
+            val intent = Intent(this, Pager1::class.java)
+            startActivity(intent)
+        }
+
+        val skip = findViewById<TextView>(R.id.skip)
+        skip.setOnClickListener(){
+            val intent = Intent(this, Termsandcon::class.java)
+            startActivity(intent)
         }
 
     }
