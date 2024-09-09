@@ -27,109 +27,54 @@
                 android:id="@+id/rncy5fdh13zi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
+
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="-20dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
                 android:text="Welcome \nBack!\n"
                 android:textColor="#000000"
                 android:textSize="36sp" />
 
-            <LinearLayout
-                android:id="@+id/rkr8fy8h6eq8"
+            <EditText
+                android:id="@+id/editTextTextEmailAddress2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="28dp"
-                android:layout_marginTop="-50dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="18dp">
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/cr4bffffff"
+                android:drawableLeft="@drawable/user"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="  Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" />
 
-                <LinearLayout
-                    android:id="@+id/ri66o36uyt49"
-                    android:layout_width="18dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="9dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/ronlr6l0oso"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginHorizontal="2dp"
-                        android:layout_marginBottom="2dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/user" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/r8ac4x3z04ce"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Username or Email"
-                    android:textColor="#676767"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/r6a9w2g4v7j7"
+            <EditText
+                android:id="@+id/editTextTextPassword3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="26dp"
-                android:layout_marginBottom="35dp"
-                android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="17dp">
-
-                <ImageView
-                    android:id="@+id/r1xym8rbp0kp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginEnd="12dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/padlock" />
-
-                <TextView
-                    android:id="@+id/rwi9sz3x5km8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Password"
-                    android:textColor="#676767"
-                    android:textSize="12sp" />
-
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:id="@+id/rl52vi1cjq5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
-
-                <ImageView
-                    android:id="@+id/rfhd60rfti55"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/eye" />
-            </LinearLayout>
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/cr4bffffff"
+                android:drawableLeft="@drawable/lock"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="  Password"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/ftgpass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="29dp"
-                android:layout_marginBottom="35dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Forgot Password?"
                 android:textColor="#1A174D"
@@ -140,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/btnlay"
                 android:gravity="center_horizontal"
@@ -154,89 +100,6 @@
                     android:text="Login"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/r83p24dwnsb5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="118dp"
-                android:layout_marginBottom="21dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="- OR Continue with -"
-                android:textColor="#575757"
-                android:textSize="12sp" />
-
-            <LinearLayout
-                android:id="@+id/ruuvm45wgk0i"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="36dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/r443ax3wjh7q"
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cr4bffffff"
-                    android:elevation="3dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingVertical="14dp">
-
-                    <ImageView
-                        android:id="@+id/rj79bm5xph7d"
-                        android:layout_width="18dp"
-                        android:layout_height="17dp"
-                        android:layout_marginEnd="15dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/github" />
-
-                    <TextView
-                        android:id="@+id/rhyspf744fvf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="GITHUB"
-                        android:textColor="#5E72E4"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/rasjfhidig2a"
-                    android:layout_width="144dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cr4bffffff"
-                    android:elevation="3dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="29dp"
-                    android:paddingVertical="14dp">
-
-                    <ImageView
-                        android:id="@+id/rtoioea7dza8"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/search" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/r2avahxpfyqx"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="GOOGLE"
-                        android:textColor="#5E72E4"
-                        android:textSize="14sp" />
-                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
