@@ -140,10 +140,11 @@
                 android:id="@+id/rr20xqx1elp"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/cr4bffffff"
-                android:layout_marginBottom="29dp"
                 android:layout_marginHorizontal="24dp"
-                android:hint="Enter your country"/>
+                android:layout_marginBottom="29dp"
+                android:background="@drawable/cr4bffffff"
+                android:hint="Enter your country"
+                android:paddingLeft="10dp" />
 
             <TextView
                 android:id="@+id/rsyuqfvj23kq"
@@ -160,10 +161,11 @@
                 android:id="@+id/rd75hs7p96lr"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/cr4bffffff"
-                android:layout_marginBottom="35dp"
                 android:layout_marginHorizontal="21dp"
-                android:hint="Enter your phone number"/>
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/cr4bffffff"
+                android:hint="Enter your phone number"
+                android:paddingLeft="10dp" />
 
             <TextView
                 android:id="@+id/rsivxwf4tos"
@@ -180,10 +182,11 @@
                 android:id="@+id/rqm0hjlb"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/cr4bffffff"
-                android:layout_marginBottom="35dp"
                 android:layout_marginHorizontal="21dp"
-                android:hint="Enter your portfolio link"/>
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/cr4bffffff"
+                android:hint="Enter your portfolio link"
+                android:paddingLeft="10dp" />
 
             <TextView
                 android:id="@+id/rfrvbzpqilcn"
@@ -200,10 +203,11 @@
                 android:id="@+id/rd4rvuul"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/cr4bffffff"
-                android:layout_marginBottom="31dp"
                 android:layout_marginHorizontal="21dp"
-                android:hint="Enter your work experience"/>
+                android:layout_marginBottom="31dp"
+                android:background="@drawable/cr4bffffff"
+                android:hint="Enter your work experience"
+                android:paddingLeft="10dp" />
 
             <TextView
                 android:id="@+id/rizr72egzq"
@@ -220,10 +224,11 @@
                 android:id="@+id/rqm0hjlbn6o"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@drawable/cr4bffffff"
-                android:layout_marginBottom="35dp"
                 android:layout_marginHorizontal="21dp"
-                android:hint="Enter your portfolio link"/>
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/cr4bffffff"
+                android:hint="Enter your portfolio link"
+                android:paddingLeft="10dp" />
 
 
 
