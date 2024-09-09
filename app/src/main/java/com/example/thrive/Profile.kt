@@ -24,6 +24,11 @@ class Profile : AppCompatActivity() {
 
         val addsk = findViewById<Button>(R.id.addsk)
         addsk.setOnClickListener(){
+            val intent = Intent(this, Selectskills::class.java)
+            startActivity(intent)
+        }
+        val comp = findViewById<Button>(R.id.comp)
+        comp.setOnClickListener(){
             val intent = Intent(this, userprofile::class.java)
             startActivity(intent)
         }
