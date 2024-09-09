@@ -50,4 +50,10 @@ dependencies {
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
 
+    // Retrofit for network requests
+    implementation (libs.retrofit)
+
+// Converter to handle JSON responses
+    implementation (libs.retrofit2.converter.gson)
+
 }
