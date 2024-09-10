@@ -3,17 +3,22 @@
 
     <item
         android:icon="@drawable/baseline_home_24"
+        android:id="home"
         android:title="Home" />
     <item
         android:icon="@drawable/user"
+        android:id="user"
         android:title="Profile" />
     <item
         android:icon="@drawable/baseline_chat_bubble_outline_24"
+        android:id="chat"
         android:title="Chat" />
     <item
         android:icon="@drawable/baseline_library_books_24"
+        android:id="services"
         android:title="Services" />
     <item
         android:icon="@drawable/baseline_settings_24"
+        android:id="sett"
         android:title="Settings" />
 </menu>

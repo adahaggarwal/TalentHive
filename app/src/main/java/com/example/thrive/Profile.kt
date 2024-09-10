@@ -9,8 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Profile : AppCompatActivity() {
+class Profile : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,12 +28,13 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, Selectskills::class.java)
             startActivity(intent)
         }
-        val comp = findViewById<Button>(R.id.comp)
-        comp.setOnClickListener(){
+        val compl = findViewById<Button>(R.id.compl)
+        compl.setOnClickListener(){
             val intent = Intent(this, userprofile::class.java)
             startActivity(intent)
         }
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
     }
-
-
 }
