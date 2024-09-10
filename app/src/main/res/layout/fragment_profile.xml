@@ -18,43 +18,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="30dp"
+            android:layout_marginBottom="15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/ho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Profile"
                 android:textColor="@color/bblue"
-                android:textSize="24sp"
-                android:fontFamily="@font/poppins_bold"
-                android:gravity="center_horizontal" />
+                android:textSize="24sp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/userimgplaceholder"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/userimgplaceholder" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="Personal Details"
                 android:textColor="@color/bblue"
-                android:textSize="20sp"
-                android:fontFamily="@font/poppins_semibold"
-                android:layout_marginBottom="10dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email Address *"
-                android:textSize="17sp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Email Address *"
                 android:textColor="@color/bblue"
-                android:fontFamily="@font/poppins_semibold" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/email"
@@ -62,18 +64,21 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="adahaggarwal@gmail.com"
-                android:background="@drawable/cr4bffffff" />
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cr4bffffff"
+                android:fontFamily="@font/poppins"
+                android:hint="  adahaggarwal@gmail.com" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Country *"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Country *"
                 android:textColor="@color/bblue"
-                android:fontFamily="@font/poppins_semibold" />
+                android:textSize="17sp" />
 
             <Spinner
                 android:id="@+id/spinn"
@@ -81,17 +86,19 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/cr4bffffff" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone Number *"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Phone Number *"
                 android:textColor="@color/bblue"
-                android:fontFamily="@font/poppins_semibold" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/phn"
@@ -99,18 +106,21 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="1234567890"
-                android:background="@drawable/cr4bffffff" />
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cr4bffffff"
+                android:fontFamily="@font/poppins"
+                android:hint="  8584014056" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Short Bio"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Short Bio *"
                 android:textColor="@color/bblue"
-                android:fontFamily="@font/poppins_semibold" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/shortbio"
@@ -118,8 +128,10 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:hint="Write a few words about yourself..."
-                android:background="@drawable/cr4bffffff" />
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/cr4bffffff"
+                android:fontFamily="@font/poppins"
+                android:hint="  Write a few words about yourself" />
 
             <Button
                 android:id="@+id/save"

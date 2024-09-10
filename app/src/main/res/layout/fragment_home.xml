@@ -61,25 +61,31 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleHorizontal"
+                <RelativeLayout
                     android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:max="100"
-                    android:progress="72"
-                    android:progressDrawable="@drawable/circular_progress" />
+                    android:layout_height="120dp">
 
-                <TextView
-                    android:id="@+id/progressText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="72%"
-                    android:textSize="24sp"
-                    android:textColor="#000"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginStart="10dp" />
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:max="100"
+                        android:progress="72"
+                        android:progressDrawable="@drawable/circular_progress"
+                        android:rotation="270" />
+
+                    <TextView
+                        android:id="@+id/progressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="72%"
+                        android:textSize="24sp"
+                        android:textColor="#000" />
+
+                </RelativeLayout>
 
                 <Button
                     android:id="@+id/compl"
@@ -87,6 +93,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="40dp"
+                    android:backgroundTint="@null"
+                    style="@style/CustomButtonStyle"
                     android:background="@drawable/btnlay"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Complete Your Profile" />
@@ -128,6 +136,8 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
+                android:backgroundTint="@null"
+                style="@style/CustomButtonStyle"
                 android:background="@drawable/scrollbtn"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Add Your Skills"
