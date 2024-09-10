@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ProgressBar
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 
@@ -17,7 +16,6 @@ class SelectSkills : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.selectskills)
 
         // Initialize views
@@ -47,7 +45,8 @@ class SelectSkills : AppCompatActivity() {
         // Set done button functionality
         doneButton.setOnClickListener {
             if (selectedSkillsCount >= 3) {
-
+                // Logic for when 3 or more skills are selected
+                // You can handle the completion of skill selection here
             }
         }
     }
