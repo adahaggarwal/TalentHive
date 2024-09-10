@@ -79,10 +79,10 @@ class Profile : Fragment() {
             if (language.isEmpty()) {
                 languageEditText.error = "Language is required"
             }
-            if (isValid) {
-                replaceFragment(home()) // Replace with the current Profile fragment or change to another fragment
-            }
-            
+//            if (isValid) {
+//                replaceFragment(Profile())
+//            }
+
         }
     }
 
