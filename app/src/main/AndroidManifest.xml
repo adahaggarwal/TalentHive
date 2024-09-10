@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Thrive"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Services"
+            android:exported="false" />
         <activity
             android:name=".NavbarActivity"
             android:exported="false" />
@@ -27,7 +29,8 @@
             android:exported="false" />
         <activity
             android:name=".qrcode"
-            android:exported="false" />        <activity
+            android:exported="false" />
+        <activity
             android:name=".Selectskills"
             android:exported="false" />
         <activity
@@ -59,6 +62,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -70,4 +74,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>
