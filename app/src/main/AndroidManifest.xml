@@ -27,11 +27,9 @@
             android:exported="false" />
         <activity
             android:name=".qrcode"
+            android:exported="false" />        <activity
+            android:name=".Selectskills"
             android:exported="false" />
-        <activity
-            android:name=".SelectSkills"
-            android:exported="false" />
-
         <activity
             android:name=".Profile"
             android:exported="false" />
