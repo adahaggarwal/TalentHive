@@ -27,7 +27,6 @@
                 android:id="@+id/rfb4kb0qzj0e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -46,7 +45,6 @@
                 android:id="@+id/rji7a6l00cd"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginHorizontal="5dp"
                 android:background="#C5C5C5"
                 android:orientation="vertical" />
 
@@ -71,8 +69,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/cr4bffffff"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
 
                 <TextView
                     android:id="@+id/rvv7uw9ycip"
@@ -87,16 +87,16 @@
                     android:textSize="17dp" />
 
                 <EditText
-                    android:id="@+id/r82xe05psv5"
+                    android:id="@+id/editTextTextEmailAddress4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="24dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="31dp"
                     android:background="@drawable/cr4bffffff"
-                    android:hint="Enter your email address"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="19dp"
-                    android:text="aashifa@gmail.com" />
+                    android:ems="10"
+                    android:hint="  adahaggarwal@gmail.com" />
+
 
                 <TextView
                     android:id="@+id/r8s59dx8ia3t"
@@ -113,7 +113,8 @@
                     android:id="@+id/rr20xqx1elp"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="29dp"
                     android:background="@drawable/cr4bffffff"
                     android:hint="Enter your country"
@@ -131,14 +132,18 @@
                     android:textSize="17dp" />
 
                 <EditText
-                    android:id="@+id/rd75hs7p96lr"
+                    android:id="@+id/editTextPhone"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginHorizontal="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="35dp"
                     android:background="@drawable/cr4bffffff"
+                    android:ems="10"
                     android:hint="Enter your phone number"
+                    android:inputType="phone"
                     android:paddingLeft="10dp" />
+
 
                 <TextView
                     android:id="@+id/rsivxwf4tos"
@@ -155,7 +160,8 @@
                     android:id="@+id/rqm0hjlb"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginHorizontal="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="35dp"
                     android:background="@drawable/cr4bffffff"
                     android:hint="Enter your portfolio link"
@@ -165,7 +171,8 @@
                     android:id="@+id/rfrvbzpqilcn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="15dp"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="Work Experience"
@@ -176,7 +183,8 @@
                     android:id="@+id/rd4rvuul"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginHorizontal="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="31dp"
                     android:background="@drawable/cr4bffffff"
                     android:hint="Enter your work experience"
@@ -197,7 +205,8 @@
                     android:id="@+id/rqm0hjlbn6o"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginHorizontal="21dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="35dp"
                     android:background="@drawable/cr4bffffff"
                     android:hint="Enter your portfolio link"

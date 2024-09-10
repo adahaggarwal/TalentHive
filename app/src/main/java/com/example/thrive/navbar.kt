@@ -23,8 +23,10 @@ class NavbarActivity : AppCompatActivity() {
                     replaceFragment(Settingspg())
                 }
 
-                // Uncomment and complete other cases if necessary
-                // R.id.prof -> replaceFragment(ProfFragment())
+
+                R.id.prof -> {
+                    replaceFragment(Profile())
+                }
                 // R.id.chat -> replaceFragment(ChatFragment())
             }
             true
