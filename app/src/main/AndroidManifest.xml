@@ -34,6 +34,9 @@
             android:name=".Selectskills"
             android:exported="false" />
         <activity
+            android:name=".userprofile"
+            android:exported="false" />
+        <activity
             android:name=".Pager1"
             android:exported="false" />
         <activity

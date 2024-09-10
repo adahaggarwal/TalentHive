@@ -2,23 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/ho"
+
         android:icon="@drawable/baseline_home_24"
-        android:id="home"
         android:title="Home" />
     <item
+        android:id="@+id/prof"
+
         android:icon="@drawable/user"
-        android:id="user"
         android:title="Profile" />
     <item
+        android:id="@+id/chat"
+
         android:icon="@drawable/baseline_chat_bubble_outline_24"
-        android:id="chat"
         android:title="Chat" />
     <item
+        android:id="@+id/serv"
+
         android:icon="@drawable/baseline_library_books_24"
-        android:id="services"
         android:title="Services" />
     <item
         android:icon="@drawable/baseline_settings_24"
-        android:id="sett"
         android:title="Settings" />
 </menu>
