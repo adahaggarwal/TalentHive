@@ -10,21 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Profile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Profile : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -40,49 +30,73 @@ class Profile : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Update the IDs to match your XML layout
         val emailEditText = view.findViewById<EditText>(R.id.email)
-        val phoneEditText = view.findViewById<EditText>(R.id.phno)
-        val languageEditText = view.findViewById<EditText>(R.id.lang)
+        val phoneEditText = view.findViewById<EditText>(R.id.phn) // Correct ID from XML
+        val languageEditText = view.findViewById<EditText>(R.id.shortbio) // Correct ID from XML
         val countrySpinner = view.findViewById<Spinner>(R.id.spinn)
 
-        // Set country dropdown options (example)
+        // Set country dropdown options (ensure this array exists in your strings.xml)
         val countries = resources.getStringArray(R.array.countries_array)
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, countries)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         countrySpinner.adapter = adapter
 
-        view.findViewById<Button>(R.id.sv).setOnClickListener {
+        // Save button logic with updated ID
+        view.findViewById<Button>(R.id.save).setOnClickListener {
             val email = emailEditText.text.toString()
             val phone = phoneEditText.text.toString()
             val language = languageEditText.text.toString()
             val country = countrySpinner.selectedItem.toString()
 
-            var isValid = true
+            var completedFields = 0
+            val totalFields = 4
 
-
-            if (!isValidEmail(email)) {
+            // Validate and count completed fields
+            if (isValidEmail(email)) {
+                completedFields++
+            } else {
                 emailEditText.error = "Invalid email address"
             }
-            if (!isValidPhone(phone)) {
+
+            if (isValidPhone(phone)) {
+                completedFields++
+            } else {
                 phoneEditText.error = "Invalid phone number"
             }
-            if (country == "Select your country") {
+
+            if (country != "Select your country") {
+                completedFields++
+            } else {
                 Toast.makeText(context, "Please select a country", Toast.LENGTH_SHORT).show()
             }
-            if (language.isEmpty()) {
+
+            if (language.isNotEmpty()) {
+                completedFields++
+            } else {
                 languageEditText.error = "Language is required"
             }
-//            if (isValid) {
-//                replaceFragment(Profile())
-//            }
 
+            // Calculate progress
+            val progress = (completedFields.toFloat() / totalFields) * 100
+
+            // Pass progress to the home fragment
+            val bundle = Bundle()
+            bundle.putFloat("progress", progress)
+            parentFragmentManager.setFragmentResult("progressUpdate", bundle)
+
+            // Navigate to the landing page
+            val landingPageFragment = home() // Create an instance of your LandingPageFragment
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, landingPageFragment) // Replace 'fragment_container' with your container ID
+                .addToBackStack(null) // Optionally add to back stack
+                .commit()
         }
     }
 
@@ -96,27 +110,7 @@ class Profile : Fragment() {
         return phone.length == 10 && phone.all { it.isDigit() }
     }
 
-
-
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager: FragmentManager = parentFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
-
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(param1: String, param2: String) =
             Profile().apply {
                 arguments = Bundle().apply {

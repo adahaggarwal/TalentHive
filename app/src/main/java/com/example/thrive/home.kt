@@ -11,7 +11,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +23,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class home : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -53,8 +51,8 @@ class home : Fragment() {
         val addsk = view.findViewById<Button>(R.id.addsk)
         val compl = view.findViewById<Button>(R.id.compl)
 
-        // Set progress on the progressBar
-        progressBar.progress = 72 // set the progress
+        // Set progress on the progressBar (initial value)
+        progressBar.progress = 0
         progressText.text = "${progressBar.progress}%"
 
         // Set listeners for buttons
@@ -65,6 +63,13 @@ class home : Fragment() {
 
         compl.setOnClickListener {
             replaceFragment(Profile())
+        }
+
+        // Listen for progress updates from Profile fragment
+        parentFragmentManager.setFragmentResultListener("progressUpdate", this) { _, result ->
+            val progress = result.getFloat("progress", 0f)
+            progressBar.progress = progress.toInt()
+            progressText.text = "${progressBar.progress}%"
         }
     }
 
@@ -85,7 +90,6 @@ class home : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment home.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             home().apply {
