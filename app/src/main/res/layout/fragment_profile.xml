@@ -82,12 +82,12 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Email Address"
+                    android:text="Email Address *"
                     android:textColor="@color/bblue"
                     android:textSize="17dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextEmailAddress4"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginStart="20dp"
@@ -105,20 +105,19 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginBottom="17dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Country "
+                    android:text="Country *"
                     android:textColor="@color/bblue"
                     android:textSize="17dp" />
 
-                <EditText
-                    android:id="@+id/rr20xqx1elp"
+                <Spinner
+                    android:id="@+id/spinn"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="29dp"
-                    android:background="@drawable/cr4bffffff"
-                    android:hint="Enter your country"
-                    android:paddingLeft="10dp" />
+                    android:background="@drawable/cr4bffffff" />
+
 
                 <TextView
                     android:id="@+id/rsyuqfvj23kq"
@@ -127,12 +126,12 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginBottom="11dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Phone Number"
+                    android:text="Phone Number *"
                     android:textColor="@color/bblue"
                     android:textSize="17dp" />
 
                 <EditText
-                    android:id="@+id/editTextPhone"
+                    android:id="@+id/phno"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginStart="20dp"
@@ -197,12 +196,12 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginBottom="11dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Language"
+                    android:text="Language *"
                     android:textColor="@color/bblue"
                     android:textSize="17dp" />
 
                 <EditText
-                    android:id="@+id/rqm0hjlbn6o"
+                    android:id="@+id/lang"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginStart="20dp"
@@ -213,7 +212,7 @@
                     android:paddingLeft="10dp" />
 
                 <Button
-                    android:id="@+id/btn_Savechanges"
+                    android:id="@+id/sv"
                     style="@style/CustomButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
