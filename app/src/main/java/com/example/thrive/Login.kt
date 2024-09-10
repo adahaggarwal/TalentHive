@@ -6,8 +6,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +21,7 @@ class Login : AppCompatActivity() {
 
         val log = findViewById<LinearLayout>(R.id.log)
         log.setOnClickListener(){
-            val intent = Intent(this, Profile::class.java)
+            val intent = Intent(this, NavbarActivity::class.java)
             startActivity(intent)
         }
 
