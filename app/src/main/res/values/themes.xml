@@ -14,4 +14,13 @@
         <item name="backgroundTint">@null</item>
         <!-- Optional: you can specify other button properties here -->
     </style>
+
+    <style name="Theme.Thrive.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Thrive.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Thrive.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Thrive"
         tools:targetApi="31">
+
         <activity
             android:name=".NavbarActivity"
             android:exported="false" />
@@ -29,15 +30,11 @@
         <activity
             android:name=".qrcode"
             android:exported="false" />
-        <activity
-            android:name=".Landing"
-            android:exported="false" />
+
         <activity
             android:name=".Selectskills"
             android:exported="false" />
-        <activity
-            android:name=".userprofile"
-            android:exported="false" />
+
         <activity
             android:name=".Pager1"
             android:exported="false" />
@@ -67,6 +64,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MainActivity"
