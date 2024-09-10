@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/bg"
+        android:background="@color/white"
         android:clipToPadding="false"
 
         >
@@ -21,7 +21,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -38,7 +40,7 @@
             <ImageView
                 android:id="@+id/rjuxan1v14jf"
                 android:layout_width="300dp"
-                android:layout_height="250dp"
+                android:layout_height="220dp"
 
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
@@ -153,7 +155,7 @@
                 android:id="@+id/r1gtmeyjzz0k"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                
+
                 android:layout_marginHorizontal="120dp"
 
                 android:orientation="vertical">

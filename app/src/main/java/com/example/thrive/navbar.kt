@@ -27,6 +27,9 @@ class NavbarActivity : AppCompatActivity() {
                 R.id.prof -> {
                     replaceFragment(Profile())
                 }
+                R.id.serv -> {
+                    replaceFragment(Services())
+                }
                 // R.id.chat -> replaceFragment(ChatFragment())
             }
             true
