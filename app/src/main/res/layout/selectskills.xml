@@ -14,135 +14,101 @@
         android:layout_weight="1">
 
         <LinearLayout
+            android:id="@+id/skillContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <!-- Title and subtitle -->
-
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="21dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Select Your Skills"
                 android:textColor="#1F2024"
-                android:textSize="24sp"/>
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/subtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="41dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Choose your interests."
                 android:textColor="#71727A"
-                android:textSize="14sp"/>
+                android:textSize="20sp" />
 
-            <!-- Skill 1 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox1"
+            <!-- Instruction Text -->
+            <TextView
+                android:id="@+id/instructionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="Programming &amp; Tech"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="(Minimum of three)"
+                android:textColor="#FF0000" />
 
-            <!-- Skill 2 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox2"
+            <!-- Search View for Skills -->
+            <SearchView
+                android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp"
-                android:fontFamily="@font/poppins"
-                android:text="Digital Marketing"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/searchlay"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:queryHint="Search your Skill" />
 
-            <!-- Skill 3 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox3"
+            <!-- Add new skill section with EditText and Button -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="20dp"
-                android:fontFamily="@font/poppins"
-                android:text="Writing &amp; Translation"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
 
-            <!-- Skill 4 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox4"
+                <EditText
+                    android:id="@+id/editTextAddSkill"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/cr4bffffff"
+                    android:hint="  Add a new skill"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="#1F2024"
+                    android:textColorHint="#71727A" />
+
+                <Button
+                    android:id="@+id/addSkillButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:backgroundTint="@null"
+                    style="@style/CustomButtonStyle"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/btnlay"
+                    android:fontFamily="@font/poppins_bold"/>
+            </LinearLayout>
+
+            <!-- Container for dynamically added skills -->
+            <LinearLayout
+                android:id="@+id/skillsAddedLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp"
-                android:fontFamily="@font/poppins"
-                android:text="Video &amp; Animation"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
-
-            <!-- Skill 5 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp"
-                android:fontFamily="@font/poppins"
-                android:text="Music &amp; Audio"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
-
-            <!-- Skill 6 -->
-            <CheckBox
-                android:id="@+id/skillCheckbox6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/cr4bffffff"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="21dp"
-                android:fontFamily="@font/poppins"
-                android:text="Graphics &amp; Design"
-                android:textColor="#1F2024"
-                android:textSize="14sp" />
-
+                android:orientation="vertical" />
         </LinearLayout>
-
     </ScrollView>
 
+    <!-- Done button -->
     <Button
         android:id="@+id/done"
         style="@style/CustomButtonStyle"
@@ -154,5 +120,4 @@
         android:fontFamily="@font/poppins"
         android:text="Done"
         android:enabled="false" />
-
 </LinearLayout>
