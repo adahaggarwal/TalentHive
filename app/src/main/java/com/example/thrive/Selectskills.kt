@@ -8,8 +8,11 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class Selectskills : AppCompatActivity() {
 
@@ -34,6 +37,8 @@ class Selectskills : AppCompatActivity() {
         editTextAddSkill = findViewById(R.id.editTextAddSkill)
         skillsAddedLayout = findViewById(R.id.skillsAddedLayout)
 
+        fetchSkillsFromFirebase()
+
         // Handle adding new skill
         addSkillButton.setOnClickListener {
             val newSkill = editTextAddSkill.text.toString().trim()
@@ -51,6 +56,8 @@ class Selectskills : AppCompatActivity() {
             }
         }
 
+
+
         // Set done button click listener
         doneButton.setOnClickListener {
             if (skillsList.size >= 3) {
@@ -61,6 +68,31 @@ class Selectskills : AppCompatActivity() {
                 Toast.makeText(this, "Please add at least 3 skills", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun fetchSkillsFromFirebase() {
+        val userId = "your_unique_user_id" // Ideally, replace with a real user ID (from Firebase Auth)
+        val userSkillsReference = database.child(userId)
+
+        userSkillsReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                skillsList.clear()
+                skillsAddedLayout.removeAllViews()
+
+                for (skillSnapshot in snapshot.children) {
+                    val skill = skillSnapshot.getValue(String::class.java)
+                    if (skill != null) {
+                        addSkillToLayout(skill)
+                        skillsList.add(skill)
+                    }
+                }
+                updateDoneButtonState()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@Selectskills, "Failed to load skills", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     // Dynamically add the skill to the layout
