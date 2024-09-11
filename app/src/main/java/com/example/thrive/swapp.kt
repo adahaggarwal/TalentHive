@@ -7,23 +7,32 @@ import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class swapp : AppCompatActivity() {
 
-    // Firebase Database reference
+    // Firebase Authentication and Database reference
+    private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
     private lateinit var userSkillsReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_swapp)
 
-        // Initialize Firebase database reference (adjust path as needed)
-        val userId = "your_unique_user_id"  // Replace this with the actual user ID from Firebase Auth
+        // Initialize Firebase Authentication and Database reference
+        auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().reference
-        userSkillsReference = database.child("users").child(userId).child("skills")
+
+        // Get the current user's email and replace dots with commas
+        val userEmail = auth.currentUser?.email?.replace(".", ",")
+        if (userEmail != null) {
+            userSkillsReference = database.child("users").child(userEmail).child("skills")
+        } else {
+            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         // Find views
         val skillSpinner = findViewById<Spinner>(R.id.skillSpinner)
