@@ -38,7 +38,7 @@
                 android:textSize="36sp" />
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress2"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
@@ -54,7 +54,7 @@
                 android:paddingBottom="15dp" />
 
             <EditText
-                android:id="@+id/editTextTextPassword3"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,6 +36,26 @@
                 android:textColor="#000000"
                 android:textSize="36sp" />
 
+
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/cr4bffffff"
+                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:ems="10"
+                android:fontFamily="@font/poppins"
+                android:hint="  Phone Number"
+
+                android:paddingStart="10dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:inputType="phone" />
+
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
                 android:layout_width="match_parent"
@@ -44,7 +63,7 @@
                 android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:background="@drawable/cr4bffffff"
-                android:drawableLeft="@drawable/user"
+                android:drawableLeft="@drawable/baseline_email_24"
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:hint="  Email Address"
@@ -54,41 +73,38 @@
                 android:paddingEnd="10dp"
                 android:paddingBottom="15dp" />
 
-            <EditText
-                android:id="@+id/editTextTextPassword"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="35dp"
-                android:layout_weight="1"
-                android:background="@drawable/cr4bffffff"
-                android:drawableLeft="@drawable/lock"
-                android:drawableRight="@drawable/eye"
-                android:ems="10"
-                android:fontFamily="@font/poppins"
-                android:hint="  Password"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:paddingTop="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="15dp" />
+                android:orientation="horizontal"
+                android:background="@drawable/cr4bffffff">
 
-            <EditText
-                android:id="@+id/editTextTextPassword2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="35dp"
-                android:layout_weight="1"
-                android:background="@drawable/cr4bffffff"
-                android:drawableLeft="@drawable/lock"
-                android:drawableRight="@drawable/eye"
-                android:ems="10"
-                android:fontFamily="@font/poppins"
-                android:hint="  Confirm Password"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:paddingTop="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="15dp" />
+                <EditText
+                    android:id="@+id/pass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/lock"
+                    android:fontFamily="@font/poppins"
+                    android:hint="  Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="15dp" />
+
+                <ImageView
+                    android:id="@+id/togglePasswordVisibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:contentDescription="Toggle password visibility"
+                    android:padding="10dp"
+                    android:src="@drawable/eye" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/cracc"
@@ -113,6 +129,17 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-48dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="40dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Already have an account? Login." />
+
+            <TextView
                 android:id="@+id/r4j115bma0zf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,8 +154,6 @@
                 android:id="@+id/r4pk5mhr0g7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
-
                 android:orientation="horizontal">
 
                 <Button

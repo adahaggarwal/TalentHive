@@ -10,219 +10,114 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
+            android:id="@+id/skillContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Top horizontal lines -->
-            <LinearLayout
-                android:id="@+id/lineContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="46dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/topLine"
-                    android:layout_width="163dp"
-                    android:layout_height="8dp"
-                    android:orientation="vertical">
-
-                    <ProgressBar
-                        android:layout_width="175dp"
-                        android:layout_height="wrap_content"
-                        android:background="@color/bblue" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/bottomLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:orientation="vertical" />
-
-                <!--                    android:background="@drawable/cr4be8e9f1"-->
-            </LinearLayout>
-
             <!-- Title and subtitle -->
-
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginBottom="21dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Select Your Skills"
                 android:textColor="#1F2024"
-                android:textSize="24sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/subtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="41dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Choose your interests."
                 android:textColor="#71727A"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
-            <!-- Skill 1 -->
-            <LinearLayout
-                android:id="@+id/skillUI"
+            <!-- Instruction Text -->
+            <TextView
+                android:id="@+id/instructionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="20dp">
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="(Minimum of three)"
+                android:textColor="#FF0000" />
 
-                <TextView
-                    android:id="@+id/skillUIText"
+            <!-- Search View for Skills -->
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/searchlay"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:queryHint="Search your Skill" />
+
+            <!-- Add new skill section with EditText and Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <EditText
+                    android:id="@+id/editTextAddSkill"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
-                    android:text="User Interface"
+                    android:background="@drawable/cr4bffffff"
+                    android:hint="  Add a new skill"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
                     android:textColor="#1F2024"
-                    android:textSize="14sp" />
-            </LinearLayout>
+                    android:textColorHint="#71727A" />
 
-            <!-- Skill 2 -->
-            <LinearLayout
-                android:id="@+id/skillUX"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:orientation="vertical"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp">
-
-                <TextView
-                    android:id="@+id/skillUXText"
+                <Button
+                    android:id="@+id/addSkillButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="User Experience"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp" />
+                    android:text="Add"
+                    android:backgroundTint="@null"
+                    style="@style/CustomButtonStyle"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:background="@drawable/btnlay"
+                    android:fontFamily="@font/poppins_bold"/>
             </LinearLayout>
 
-            <!-- Skill 3 -->
+            <!-- Container for dynamically added skills -->
             <LinearLayout
-                android:id="@+id/skillResearch"
+                android:id="@+id/skillsAddedLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="20dp">
-
-                <TextView
-                    android:id="@+id/skillResearchText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
-                    android:text="User Research"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Skill 4 -->
-            <LinearLayout
-                android:id="@+id/skillWriting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:orientation="vertical"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp">
-
-                <TextView
-                    android:id="@+id/skillWritingText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="UX Writing"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Skill 5 -->
-            <LinearLayout
-                android:id="@+id/skillTesting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="41dp"
-                android:background="@drawable/cr4bffffff"
-                android:orientation="vertical"
-                android:paddingHorizontal="17dp"
-                android:paddingVertical="21dp">
-
-                <TextView
-                    android:id="@+id/skillTestingText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="User Testing"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Skill 6 -->
-            <LinearLayout
-                android:id="@+id/skillServiceDesign"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/cr4bffffff"
-                android:orientation="vertical"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="21dp">
-
-                <TextView
-                    android:id="@+id/skillServiceDesignText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:text="Service Design"
-                    android:textColor="#1F2024"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <Button
-                style="@style/CustomButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/btnlay"
-                android:backgroundTint="@null"
-                android:fontFamily="@font/poppins"
-                android:text="Done" />
-
-
+                android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>
+
+    <!-- Done button -->
+    <Button
+        android:id="@+id/done"
+        style="@style/CustomButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btnlay"
+        android:backgroundTint="@null"
+        android:fontFamily="@font/poppins"
+        android:text="Done"
+        android:enabled="false" />
 </LinearLayout>
