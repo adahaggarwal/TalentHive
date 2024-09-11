@@ -8,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class Selectskills : AppCompatActivity() {
 
@@ -17,9 +19,15 @@ class Selectskills : AppCompatActivity() {
     private lateinit var skillsAddedLayout: LinearLayout
     private var skillsList = mutableListOf<String>()
 
+    // Firebase Database reference
+    private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectskills)
+
+        // Initialize Firebase database reference
+        database = FirebaseDatabase.getInstance().reference.child("users").child("skills")
 
         doneButton = findViewById(R.id.done)
         addSkillButton = findViewById(R.id.addSkillButton)
@@ -45,20 +53,46 @@ class Selectskills : AppCompatActivity() {
 
         // Set done button click listener
         doneButton.setOnClickListener {
-            val intent = Intent(this, NavbarActivity::class.java)
-            startActivity(intent)
+            if (skillsList.size >= 3) {
+                saveSkillsToFirebase()
+                val intent = Intent(this, NavbarActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please add at least 3 skills", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     // Dynamically add the skill to the layout
     private fun addSkillToLayout(skill: String) {
-        val skillTextView = TextView(this).apply {
-            text = skill
-            textSize = 16f
-            setTextColor(resources.getColor(R.color.black, null))
-            setPadding(0, 20, 0, 20)
+        val inflater = layoutInflater
+        val skillView = inflater.inflate(R.layout.skill_item, skillsAddedLayout, false)
+
+        val skillTextView = skillView.findViewById<TextView>(R.id.skillText)
+        skillTextView.text = skill
+
+        val deleteButton = skillView.findViewById<Button>(R.id.deleteButton)
+        deleteButton.setOnClickListener {
+            skillsAddedLayout.removeView(skillView)
+            skillsList.remove(skill)
+            updateDoneButtonState()
         }
-        skillsAddedLayout.addView(skillTextView)
+
+        skillsAddedLayout.addView(skillView)
+    }
+
+    // Save skills to Firebase
+    private fun saveSkillsToFirebase() {
+        val userId = "your_unique_user_id" // Ideally, replace with a real user ID (from Firebase Auth)
+        val userSkillsReference = database.child(userId)
+
+        userSkillsReference.setValue(skillsList)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Skills saved successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to save skills", Toast.LENGTH_SHORT).show()
+            }
     }
 
     // Enable or disable the Done button based on the number of added skills
