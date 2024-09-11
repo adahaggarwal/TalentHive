@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -22,15 +23,17 @@ class Selectskills : AppCompatActivity() {
     private lateinit var skillsAddedLayout: LinearLayout
     private var skillsList = mutableListOf<String>()
 
-    // Firebase Database reference
+    // Firebase Authentication and Database reference
+    private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.selectskills)
 
-        // Initialize Firebase database reference
-        database = FirebaseDatabase.getInstance().reference.child("users").child("skills")
+        // Initialize Firebase Authentication and Database reference
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().reference.child("users")
 
         doneButton = findViewById(R.id.done)
         addSkillButton = findViewById(R.id.addSkillButton)
@@ -56,8 +59,6 @@ class Selectskills : AppCompatActivity() {
             }
         }
 
-
-
         // Set done button click listener
         doneButton.setOnClickListener {
             if (skillsList.size >= 3) {
@@ -71,28 +72,32 @@ class Selectskills : AppCompatActivity() {
     }
 
     private fun fetchSkillsFromFirebase() {
-        val userId = "your_unique_user_id" // Ideally, replace with a real user ID (from Firebase Auth)
-        val userSkillsReference = database.child(userId)
+        val userEmail = auth.currentUser?.email?.replace(".", ",") // Replace dots with commas to use email as a key
+        if (userEmail != null) {
+            val userSkillsReference = database.child(userEmail).child("skills")
 
-        userSkillsReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                skillsList.clear()
-                skillsAddedLayout.removeAllViews()
+            userSkillsReference.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    skillsList.clear()
+                    skillsAddedLayout.removeAllViews()
 
-                for (skillSnapshot in snapshot.children) {
-                    val skill = skillSnapshot.getValue(String::class.java)
-                    if (skill != null) {
-                        addSkillToLayout(skill)
-                        skillsList.add(skill)
+                    for (skillSnapshot in snapshot.children) {
+                        val skill = skillSnapshot.getValue(String::class.java)
+                        if (skill != null) {
+                            addSkillToLayout(skill)
+                            skillsList.add(skill)
+                        }
                     }
+                    updateDoneButtonState()
                 }
-                updateDoneButtonState()
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@Selectskills, "Failed to load skills", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@Selectskills, "Failed to load skills", Toast.LENGTH_SHORT).show()
+                }
+            })
+        } else {
+            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
+        }
     }
 
     // Dynamically add the skill to the layout
@@ -113,18 +118,22 @@ class Selectskills : AppCompatActivity() {
         skillsAddedLayout.addView(skillView)
     }
 
-    // Save skills to Firebase
+    // Save skills to Firebasechild
     private fun saveSkillsToFirebase() {
-        val userId = "your_unique_user_id" // Ideally, replace with a real user ID (from Firebase Auth)
-        val userSkillsReference = database.child(userId)
+        val userEmail = auth.currentUser?.email?.replace(".", ",") // Replace dots with commas to use email as a key
+        if (userEmail != null) {
+            val userSkillsReference = database.child(userEmail).child("skills")
 
-        userSkillsReference.setValue(skillsList)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Skills saved successfully", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Failed to save skills", Toast.LENGTH_SHORT).show()
-            }
+            userSkillsReference.setValue(skillsList)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Skills saved successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Failed to save skills", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
+        }
     }
 
     // Enable or disable the Done button based on the number of added skills

@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Register : AppCompatActivity() {
 
-    // Firebase Authentication instance
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +21,8 @@ class Register : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Find Views
         val createAccountButton = findViewById<LinearLayout>(R.id.cracc)
         val nameEditText = findViewById<EditText>(R.id.name)
         val ll = findViewById<TextView>(R.id.ll)
@@ -33,30 +30,24 @@ class Register : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.pass)
         val togglePasswordVisibility = findViewById<ImageView>(R.id.togglePasswordVisibility)
 
-        ll.setOnClickListener(){
+        ll.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-
         }
 
-        // Toggle password visibility
         var isPasswordVisible = false
         togglePasswordVisibility.setOnClickListener {
             isPasswordVisible = !isPasswordVisible
             if (isPasswordVisible) {
-                // Show password
                 passwordEditText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-                togglePasswordVisibility.setImageResource(R.drawable.eye)  // Use an open-eye drawable
+                togglePasswordVisibility.setImageResource(R.drawable.eye)
             } else {
-                // Hide password
                 passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                togglePasswordVisibility.setImageResource(R.drawable.baseline_remove_red_eye_24)  // Use a closed-eye drawable
+                togglePasswordVisibility.setImageResource(R.drawable.baseline_remove_red_eye_24)
             }
-            // Move cursor to end of the text
             passwordEditText.setSelection(passwordEditText.text.length)
         }
 
-        // Set up the create account button
         createAccountButton.setOnClickListener {
             val name = nameEditText.text.toString().trim()
             val email = emailEditText.text.toString().trim()
@@ -68,9 +59,8 @@ class Register : AppCompatActivity() {
         }
     }
 
-    // Validate the input
     private fun validateInput(name: String, email: String, password: String): Boolean {
-        if (name.isEmpty() || name.length<10) {
+        if (name.isEmpty() || name.length < 10) {
             Toast.makeText(this, "Please Enter Valid Phone Number", Toast.LENGTH_SHORT).show()
             return false
         }
@@ -89,20 +79,17 @@ class Register : AppCompatActivity() {
         return true
     }
 
-    // Register the user with Firebase
     private fun registerUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Registration success
                     Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
 
-                    // Navigate to the login screen or another activity
-                    val intent = Intent(this, home::class.java)
+                    // Navigate to MainActivity
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
-
                 } else {
-                    // If registration fails, display a message to the user.
                     Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }

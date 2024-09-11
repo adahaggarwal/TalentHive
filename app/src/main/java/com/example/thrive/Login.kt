@@ -77,7 +77,7 @@ class Login : AppCompatActivity() {
                     // Navigate to the main screen or dashboard
                     val intent = Intent(this, NavbarActivity::class.java)
                     startActivity(intent)
-                    finish()
+
                 } else {
 
                     Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
