@@ -98,7 +98,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins"
                             android:text="50 coins"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/textView24"
@@ -107,7 +107,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Rs.100"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
                     </LinearLayout>
                 </TableRow>
 
@@ -140,7 +140,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins"
                             android:text="100 coins"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/textView18"
@@ -149,7 +149,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Rs. 150"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
                     </LinearLayout>
                 </TableRow>
 
@@ -182,7 +182,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins"
                             android:text="300 coins"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/textView20"
@@ -191,7 +191,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Rs. 360"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
                     </LinearLayout>
                 </TableRow>
 
@@ -223,7 +223,7 @@
                             android:layout_marginEnd="40dp"
                             android:layout_weight="1"
                             android:text="500 coins"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:id="@+id/textView26"
@@ -232,7 +232,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Rs. 700"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/black" />
                     </LinearLayout>
                 </TableRow>
             </TableLayout>
