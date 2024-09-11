@@ -28,9 +28,16 @@ class Register : AppCompatActivity() {
         // Find Views
         val createAccountButton = findViewById<LinearLayout>(R.id.cracc)
         val nameEditText = findViewById<EditText>(R.id.name)
+        val ll = findViewById<TextView>(R.id.ll)
         val emailEditText = findViewById<EditText>(R.id.editTextTextEmailAddress)
         val passwordEditText = findViewById<EditText>(R.id.pass)
         val togglePasswordVisibility = findViewById<ImageView>(R.id.togglePasswordVisibility)
+
+        ll.setOnClickListener(){
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+
+        }
 
         // Toggle password visibility
         var isPasswordVisible = false
@@ -63,8 +70,8 @@ class Register : AppCompatActivity() {
 
     // Validate the input
     private fun validateInput(name: String, email: String, password: String): Boolean {
-        if (name.isEmpty()) {
-            Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || name.length<10) {
+            Toast.makeText(this, "Please Enter Valid Phone Number", Toast.LENGTH_SHORT).show()
             return false
         }
         if (email.isEmpty()) {
@@ -91,9 +98,9 @@ class Register : AppCompatActivity() {
                     Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
 
                     // Navigate to the login screen or another activity
-                    val intent = Intent(this, Login::class.java)
+                    val intent = Intent(this, home::class.java)
                     startActivity(intent)
-                    finish()  // Optionally finish this activity so the user can't go back
+
                 } else {
                     // If registration fails, display a message to the user.
                     Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
