@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
-        android:id="@+id/ritgo86edfn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white"
-        android:clipToPadding="false"
-
-        >
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,8 +20,8 @@
             android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
+            <!-- Title -->
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -37,99 +31,98 @@
                 android:textColor="@color/bblue"
                 android:textSize="24sp" />
 
+            <!-- Image -->
             <ImageView
-                android:id="@+id/rjuxan1v14jf"
                 android:layout_width="300dp"
                 android:layout_height="220dp"
-
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/swappic" />
 
             <LinearLayout
-                android:id="@+id/rpn1kav6il0k"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginBottom="77dp"
                 android:background="@drawable/cr4bffffff"
-                android:elevation="30dp"
+                android:elevation="10dp"
                 android:orientation="vertical"
+                android:paddingStart="10dp"
                 android:paddingTop="26dp"
-                android:paddingBottom="16dp">
+                android:paddingEnd="10dp"
+                android:paddingBottom="30dp">
 
+                <!-- Skill You Have (Spinner) -->
                 <TextView
-                    android:id="@+id/raoqsgaqdrxn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="7dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Skill you Have "
+                    android:text="Skill you Have"
                     android:textColor="#000000"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
 
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:id="@+id/r38y8fkmd0gj"
+                <Spinner
+                    android:id="@+id/skillSpinner"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
+                    android:layout_height="50dp"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginBottom="15dp"
                     android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
-                    android:orientation="vertical"></LinearLayout>
+                    android:padding="10dp" />
 
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:id="@+id/rj5xg8olm0nh"
+                <!-- Up/Down Arrow -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="128dp"
+
                     android:layout_marginBottom="18dp"
-                    android:gravity="center_vertical"
+
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/rf9tx9lavh25"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:layout_marginEnd="1dp"
-                        android:scaleType="fitXY"
+
                         android:src="@drawable/baseline_arrow_upward_24" />
 
                     <ImageView
-                        android:id="@+id/r2lr2i1c6zr5"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:scaleType="fitXY"
+
                         android:src="@drawable/baseline_arrow_downward_24" />
                 </LinearLayout>
 
+                <!-- Skill You Want to Exchange (EditText) -->
                 <TextView
-                    android:id="@+id/rkymgb1ai82"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="7dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Skill you want in Exchange "
+                    android:text="Skill you want in Exchange"
                     android:textColor="#000000"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
 
-                <LinearLayout
-                    android:id="@+id/rm1xmv6yyzfr"
+                <EditText
+                    android:id="@+id/editTextDesiredSkill"
                     android:layout_width="match_parent"
-                    android:layout_height="44dp"
+                    android:layout_height="50dp"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginBottom="40dp"
                     android:background="@drawable/sa8a8a9sw1cr10bf3f3f3"
-                    android:orientation="vertical"></LinearLayout>
+                    android:hint="Enter desired skill"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#71727A" />
 
+                <!-- Find Results Button -->
                 <LinearLayout
-                    android:id="@+id/rjsu3q06wszi"
+                    android:id="@+id/fr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
@@ -139,7 +132,6 @@
                     android:paddingVertical="15dp">
 
                     <TextView
-                        android:id="@+id/r6sn1elojta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
@@ -149,18 +141,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/r1gtmeyjzz0k"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-
-                android:layout_marginHorizontal="120dp"
-
-                android:orientation="vertical">
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
