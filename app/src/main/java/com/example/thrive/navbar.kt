@@ -30,7 +30,9 @@ class NavbarActivity : AppCompatActivity() {
                 R.id.serv -> {
                     replaceFragment(Services())
                 }
-                // R.id.chat -> replaceFragment(ChatFragment())
+                R.id.chat -> {
+                    replaceFragment(Messaging())
+                }
             }
             true
         }

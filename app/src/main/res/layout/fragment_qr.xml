@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="19dp"
+                        android:layout_marginBottom="10dp"
                         android:fontFamily="@font/poppins_bold"
                         android:text="Scan the QR Code"
                         android:textColor="@color/bblue"
@@ -180,6 +180,18 @@
                         android:textColor="@color/bblue"
                         android:textSize="16sp" />
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/d"
+                    style="@style/CustomButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/btnlay"
+                    android:backgroundTint="@null"
+                    android:text="Done" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

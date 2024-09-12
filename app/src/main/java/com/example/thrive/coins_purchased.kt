@@ -4,7 +4,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.thrive.Mediation
 import com.example.thrive.R
+import com.example.thrive.qr
 
 class coins_purchased : Fragment() {
 
@@ -16,6 +20,7 @@ class coins_purchased : Fragment() {
     private lateinit var textView20: TextView
     private lateinit var textView25: TextView
     private lateinit var textView26: TextView
+    private lateinit var cl1: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +42,11 @@ class coins_purchased : Fragment() {
         textView20 = view.findViewById(R.id.textView20)
         textView25 = view.findViewById(R.id.textView25)
         textView26 = view.findViewById(R.id.textView26)
+        cl1 = view.findViewById(R.id.cl1)
+
+        cl1.setOnClickListener {
+            replaceFragment(qr())
+        }
 
         // Set up the Spinner
         val spinner: Spinner = view.findViewById(R.id.spinCurrencies)
@@ -47,6 +57,8 @@ class coins_purchased : Fragment() {
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
+
+
         }
 
         // Set default selection to INR
@@ -64,7 +76,6 @@ class coins_purchased : Fragment() {
             }
         }
     }
-
     // Function to update the coin pack values based on selected currency
     private fun updateCoinPackValues(currency: String) {
         when (currency) {
@@ -129,6 +140,14 @@ class coins_purchased : Fragment() {
                 textView26.text = "R150"
             }
         }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager: FragmentManager = parentFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
     companion object {
