@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:clipToPadding="false"
+        android:id="@+id/rcj3eyj1jh76"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingVertical="42dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/r93w283uow0w"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="28dp"
+                android:layout_marginHorizontal="29dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/rrn798bxdses"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="18dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_arrow_back_ios_24" />
+                <TextView
+                    android:id="@+id/r0xbemd9f94i"
+                    android:textColor="#1A174D"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Mediator"
+                    />
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/rqtez9mcrdps"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rkot71cxwybe"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EBEBEB"
+                android:layout_marginBottom="22dp"
+                android:orientation="vertical">
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rqcccl1g7r7i"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/cr4bffffff"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="14dp">
+
+                <TextView
+                    android:id="@+id/rx17w315f59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mention the contact you had a conflict with "
+                    android:textColor="#3D3D3D"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/r8aei9n8txkh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="29dp"
+                android:layout_marginBottom="449dp"
+                android:background="@drawable/cr4bffffff"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingVertical="14dp">
+
+                <TextView
+                    android:id="@+id/rsues3hknjkl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explain the Conflict"
+                    android:textColor="#3D3D3D"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/r8ceev3bjdy3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/cr4bffffff"
+                android:paddingVertical="16dp"
+                android:layout_marginHorizontal="18dp"
+                android:elevation="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/ro4ldiruugq"
+                    android:textColor="#1A174D"
+                    android:textSize="13sp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Wait while we process and confirm "
+                    />
+
+                <ImageView
+                    android:id="@+id/r9w2rm6befx"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="7dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_mic_24" />
+
+                <ImageView
+                    android:id="@+id/rac69dxf5bud"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_navigate_next_24" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

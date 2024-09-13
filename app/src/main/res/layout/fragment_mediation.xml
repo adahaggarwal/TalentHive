@@ -65,7 +65,7 @@
                 app:srcCompat="@drawable/sittingppl" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/con"
                 style="@style/CustomButtonStyle"
                 android:layout_width="match_parent"
 
