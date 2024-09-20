@@ -41,23 +41,10 @@ class Messaging : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_messaging, container, false)
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        val j = view.findViewById<TextView>(R.id.j)
-        j.setOnClickListener(){
-            replaceFragment(chatjason())
-        }
 
-    }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager: FragmentManager = parentFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
+
 
     companion object {
         /**
