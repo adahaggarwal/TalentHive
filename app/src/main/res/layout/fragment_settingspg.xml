@@ -367,14 +367,12 @@
                     android:layout_weight="1" />
             </LinearLayout>
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
+            <LinearLayout
                 android:id="@+id/r4smaqkaot2r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginBottom="72dp"
+                android:layout_marginBottom="30dp"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 android:gravity="center_vertical"
@@ -395,6 +393,15 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@null"
+                style="@style/CustomButtonStyle"
+                android:background="@drawable/btnlay"
+                android:text="Logout" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
