@@ -44,11 +44,11 @@
                 android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:background="@drawable/cr4bffffff"
-                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:drawableLeft="@drawable/user"
                 android:ems="10"
                 android:fontFamily="@font/poppins"
 
-                android:hint="  Phone Number"
+                android:hint="  Username"
                 android:inputType="phone"
                 android:paddingStart="10dp"
                 android:paddingTop="15dp"
