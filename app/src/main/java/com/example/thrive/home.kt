@@ -1,36 +1,60 @@
 package com.example.thrive
 
+import android.Manifest
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.bumptech.glide.Glide
+import com.google.android.material.navigation.NavigationView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [home.newInstance] factory method to
- * create an instance of this fragment.
- */
 class home : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var profileImageView: ImageView
+    private lateinit var pickImageLauncher: ActivityResultLauncher<Intent>
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+    private val PICK_IMAGE_REQUEST = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+        // Register the launcher for image picking
+        pickImageLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val imageUri: Uri? = result.data?.data
+                imageUri?.let {
+                    // Load the selected image using Glide
+                    Glide.with(this)
+                        .load(it)
+                        .circleCrop()
+                        .placeholder(R.drawable.userimgplaceholder)
+                        .into(profileImageView)
+                }
+            }
         }
     }
 
@@ -45,13 +69,59 @@ class home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Find views using view.findViewById
+        profileImageView = view.findViewById(R.id.pimg)
+
+        // Set up the toolbar and navigation drawer
+        val toolbar: Toolbar = view.findViewById(R.id.toolbar)
+        drawerLayout = requireActivity().findViewById(R.id.drawer_lay)
+        navView = requireActivity().findViewById(R.id.nav_view)
+
+        // Set up the ActionBarDrawerToggle
+        val toggle = ActionBarDrawerToggle(
+            requireActivity(), drawerLayout, toolbar,
+            R.string.open, R.string.close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        // Set the toolbar as the action bar
+        if (requireActivity() is AppCompatActivity) {
+            (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
+        }
+
+        // Set navigation item selection listener
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.inv -> {
+                    Toast.makeText(requireContext(), "inv clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.dt -> {
+                    Toast.makeText(requireContext(), "dt clicked", Toast.LENGTH_SHORT).show()
+                }
+                R.id.lo -> {
+                    Toast.makeText(requireContext(), "lo clicked", Toast.LENGTH_SHORT).show()
+                }
+            }
+            drawerLayout.closeDrawers()
+            true
+        }
+
+        // Set OnClickListener for the ImageView to open the gallery
+        profileImageView.setOnClickListener {
+            if (checkStoragePermission()) {
+                openGallery()
+            } else {
+                requestStoragePermission()
+            }
+        }
+
+        // Initialize progress bar and buttons
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
         val progressText = view.findViewById<TextView>(R.id.progressText)
         val addsk = view.findViewById<Button>(R.id.addsk)
         val compl = view.findViewById<Button>(R.id.compl)
 
-        // Set progress on the progressBar (initial value)
+        // Set initial progress value
         progressBar.progress = 0
         progressText.text = "${progressBar.progress}%"
 
@@ -73,6 +143,42 @@ class home : Fragment() {
         }
     }
 
+    private fun openGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        pickImageLauncher.launch(intent)
+    }
+
+    private fun requestStoragePermission() {
+        requestPermissions(
+            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+            PICK_IMAGE_REQUEST
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == PICK_IMAGE_REQUEST && grantResults.isNotEmpty()
+            && grantResults[0] == PackageManager.PERMISSION_GRANTED
+        ) {
+            openGallery()
+        }
+    }
+
+    private fun checkStoragePermission(): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED
+        } else {
+            true // No need to request permission for SDK < 23
+        }
+    }
+
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager: FragmentManager = parentFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
@@ -81,22 +187,11 @@ class home : Fragment() {
         fragmentTransaction.commit()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment home.
-         */
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            home().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+//    override fun onBackPressed() {
+//        if (drawerLayout.isDrawerOpen(navView)) {
+//            drawerLayout.closeDrawer(navView)
+//        } else {
+//            super.onBackPressed()
+//        }
+//    }
 }

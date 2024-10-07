@@ -313,4 +313,7 @@
         <item>RUB</item>
         <item>ZAR</item>
     </string-array>
+
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
 </resources>
