@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-         tools:ignore="ScopedStorage" />
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -18,72 +17,57 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Thrive"
         tools:targetApi="31">
-
+        <activity
+            android:name=".HandlerNav"
+            android:exported="false" />
         <activity
             android:name=".Mediation"
             android:exported="false" />
-       
-
         <activity
             android:name=".NavbarActivity"
             android:exported="false" />
-
         <activity
             android:name=".Services"
             android:exported="false" />
-
         <activity
             android:name=".Messaging"
             android:exported="false" />
-
         <activity
             android:name=".Settingspg"
             android:exported="false" />
-
         <activity
             android:name=".ForgotPass"
             android:exported="false" />
-
         <activity
             android:name=".Termsandcon"
             android:exported="false" />
-
         <activity
             android:name=".qr"
             android:exported="false" />
-
         <activity
             android:name=".Selectskills"
             android:exported="false" />
-
         <activity
             android:name=".Pager1"
             android:exported="false" />
-
         <activity
             android:name=".swapp"
             android:exported="false" />
-
         <activity
             android:name=".ResultsNotFound"
             android:exported="false" />
-
         <activity
             android:name=".Pager3"
             android:exported="false" />
-
         <activity
             android:name=".Pager2"
             android:exported="false" />
-
         <activity
             android:name=".Register"
             android:exported="false" />
-
         <activity
             android:name=".Login"
             android:exported="false" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -93,7 +77,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
