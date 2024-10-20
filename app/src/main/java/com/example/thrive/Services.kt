@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import coins_purchased
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"

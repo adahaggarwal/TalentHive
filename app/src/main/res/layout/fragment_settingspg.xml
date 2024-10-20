@@ -7,8 +7,7 @@
     android:background="@color/white"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:orientation="vertical"
-    tools:context=".Settingspg">
+    android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/rv7oplz0j4m"

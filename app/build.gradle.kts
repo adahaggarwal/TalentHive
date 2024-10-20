@@ -76,5 +76,7 @@ dependencies {
     implementation(libs.firebase.bom)
     implementation ("com.google.firebase:firebase-analytics:21.3.0")
 
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
+
 
 }
