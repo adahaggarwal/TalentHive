@@ -9,22 +9,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.navigation.NavigationView
 
 class home : Fragment() {
 
     private lateinit var profileImageView: ImageView
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,41 +33,6 @@ class home : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         profileImageView = view.findViewById(R.id.pimg)
-
-        // Set up the toolbar and navigation drawer
-        val toolbar: Toolbar = view.findViewById(R.id.toolbar)
-        drawerLayout = requireActivity().findViewById(R.id.drawer_lay)
-        navView = requireActivity().findViewById(R.id.nav_view)
-
-        // Set up the ActionBarDrawerToggle
-        val toggle = ActionBarDrawerToggle(
-            requireActivity(), drawerLayout, toolbar,
-            R.string.open, R.string.close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        // Set the toolbar as the action bar
-        if (requireActivity() is AppCompatActivity) {
-            (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
-        }
-
-        // Set navigation item selection listener
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.inv -> {
-                    Toast.makeText(requireContext(), "inv clicked", Toast.LENGTH_SHORT).show()
-                }
-                R.id.dt -> {
-                    Toast.makeText(requireContext(), "dt clicked", Toast.LENGTH_SHORT).show()
-                }
-                R.id.lo -> {
-                    Toast.makeText(requireContext(), "lo clicked", Toast.LENGTH_SHORT).show()
-                }
-            }
-            drawerLayout.closeDrawers()
-            true
-        }
 
         // Initialize progress bar and buttons
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)

@@ -10,6 +10,10 @@
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="Deadline Tracker" />
     <item
+        android:id="@+id/st"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Settings" />
+    <item
         android:id="@+id/lo"
         android:icon="@drawable/baseline_logout_24"
         android:title="Logout" />
