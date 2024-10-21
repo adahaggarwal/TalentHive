@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class coins_purchased : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var coinPackAdapter: CoinPackAdapter
-    private val coinPacks = mutableListOf<CoinPack>()
+    private lateinit var recyclerViewCoins: RecyclerView
+    private lateinit var adapter: CoinsAdapter
+    private lateinit var spinnerCurrencies: Spinner
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,56 +25,75 @@ class coins_purchased : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set up the RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerViewCoinPacks)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        // Initialize UI components
+        spinnerCurrencies = view.findViewById(R.id.spinCurrencies)
+        recyclerViewCoins = view.findViewById(R.id.coinsRecyclerView)
 
-        // Load initial data
-        loadCoinPackData("INR")
+        // Set up RecyclerView with LinearLayoutManager and Adapter
+        recyclerViewCoins.layoutManager = LinearLayoutManager(context)
+        adapter = CoinsAdapter(getCoinPackList("INR")) // Start with default INR coin packs
+        recyclerViewCoins.adapter = adapter
 
-        // Set up the Spinner
-        val spinner: Spinner = view.findViewById(R.id.spinCurrencies)
+        // Set up the Spinner with currencies array
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.currencies_array,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
+            spinnerCurrencies.adapter = adapter
         }
 
+        // Set default selection to INR (index 0)
+        spinnerCurrencies.setSelection(0)
+
         // Handle spinner item selection
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        spinnerCurrencies.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedCurrency = parent.getItemAtPosition(position).toString()
-                loadCoinPackData(selectedCurrency)
+                // Update RecyclerView with new currency data
+                adapter.updateCoinPackList(getCoinPackList(selectedCurrency))
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-                // Do nothing
+                // No action needed
             }
         }
     }
 
-    // Function to load coin pack data based on selected currency
-    private fun loadCoinPackData(currency: String) {
-        coinPacks.clear()
-        when (currency) {
-            "INR" -> {
-                coinPacks.add(CoinPack("100 Coins", "Rs. 100"))
-                coinPacks.add(CoinPack("150 Coins", "Rs. 150"))
-                coinPacks.add(CoinPack("360 Coins", "Rs. 360"))
-                coinPacks.add(CoinPack("700 Coins", "Rs. 700"))
-            }
-            "USD" -> {
-                coinPacks.add(CoinPack("100 Coins", "$1.20"))
-                coinPacks.add(CoinPack("150 Coins", "$1.80"))
-                coinPacks.add(CoinPack("360 Coins", "$4.40"))
-                coinPacks.add(CoinPack("700 Coins", "$8.50"))
-            }
-            // Add cases for other currencies...
+    // Function to return the list of coin packs based on selected currency
+    private fun getCoinPackList(currency: String): List<CoinPack> {
+        return when (currency) {
+            "USD" -> listOf(
+                CoinPack("Pack 1", "100 Coins", "$1.20"),
+                CoinPack("Pack 2", "150 Coins", "$1.80"),
+                CoinPack("Pack 3", "360 Coins", "$4.40"),
+                CoinPack("Pack 4", "700 Coins", "$8.50")
+            )
+            "EUR" -> listOf(
+                CoinPack("Pack 1", "100 Coins", "€1.10"),
+                CoinPack("Pack 2", "150 Coins", "€1.65"),
+                CoinPack("Pack 3", "360 Coins", "€4.00"),
+                CoinPack("Pack 4", "700 Coins", "€7.70")
+            )
+            "GBP" -> listOf(
+                CoinPack("Pack 1", "100 Coins", "£0.90"),
+                CoinPack("Pack 2", "150 Coins", "£1.35"),
+                CoinPack("Pack 3", "360 Coins", "£3.20"),
+                CoinPack("Pack 4", "700 Coins", "£6.50")
+            )
+            // Add more currencies if needed
+            else -> listOf(
+                CoinPack("Pack 1", "100 Coins", "Rs. 100"),
+                CoinPack("Pack 2", "150 Coins", "Rs. 150"),
+                CoinPack("Pack 3", "360 Coins", "Rs. 360"),
+                CoinPack("Pack 4", "700 Coins", "Rs. 700")
+            )
         }
-        coinPackAdapter = CoinPackAdapter(coinPacks)
-        recyclerView.adapter = coinPackAdapter
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = coins_purchased()
     }
 }
