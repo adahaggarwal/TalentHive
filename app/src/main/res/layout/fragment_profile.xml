@@ -46,7 +46,8 @@
             android:contentDescription="profile_image"
             android:scaleType="centerCrop"
             android:onClick="onProfileImageClick"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:background="@drawable/userimgplaceholder"/>
     </FrameLayout>
 
     <TextView
