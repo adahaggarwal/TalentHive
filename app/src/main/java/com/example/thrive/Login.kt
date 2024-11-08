@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -40,9 +40,17 @@ class Login : AppCompatActivity() {
             }
         }
 
+        val jai: TextView = findViewById(R.id.jai)
+
+        jai.setOnClickListener {
+            val intent = Intent(this, customwebview::class.java)
+            startActivity(intent) // Start the new activity
+        }
+
+
         // Navigate to Forgot Password screen
         forgotPasswordTextView.setOnClickListener {
-            val intent = Intent(this, ForgotPass::class.java)
+            val inftent = Intent(this, ForgotPass::class.java)
             startActivity(intent)
         }
 
@@ -56,11 +64,11 @@ class Login : AppCompatActivity() {
     // Validate the input
     private fun validateInput(email: String, password: String): Boolean {
         if (email.isEmpty()) {
-            Toast.makeText(this, "Please enter an email address", Toast.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(android.R.id.content), "Please enter an email address", Snackbar.LENGTH_SHORT).show()
             return false
         }
         if (password.isEmpty()) {
-            Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(android.R.id.content), "Please enter a password", Snackbar.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -72,7 +80,7 @@ class Login : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
-                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(findViewById(android.R.id.content), "Login successful!", Snackbar.LENGTH_SHORT).show()
 
                     // Navigate to the main screen or dashboard
                     val intent = Intent(this, NavbarActivity::class.java)
@@ -80,8 +88,9 @@ class Login : AppCompatActivity() {
 
                 } else {
 
-                    Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(findViewById(android.R.id.content), "Login failed: ${task.exception?.message}", Snackbar.LENGTH_SHORT).show()
                 }
+
             }
     }
 }

@@ -27,7 +27,6 @@
                 android:id="@+id/rncy5fdh13zi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="-20dp"
                 android:layout_weight="1"
@@ -106,7 +105,6 @@
                 android:id="@+id/rpayedbdkdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -129,6 +127,45 @@
                     android:textColor="#1A174D"
                     android:textSize="14sp" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Created By:"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Jainil Desai"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins"
+                android:clickable="true"
+                android:onClick="openWebView"
+                android:id="@+id/jai"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Adah Aggarwal"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Mehak Jhunjhunwala"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/poppins" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

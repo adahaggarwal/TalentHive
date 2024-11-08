@@ -46,10 +46,6 @@ class NavbarActivity : AppCompatActivity() {
                 R.id.dt -> {
                     replaceFragment(Profile())
                 }
-                R.id.st -> {
-                    val intent = Intent(this, Settingspg::class.java)
-                    startActivity(intent)
-                }
                 R.id.lo -> {
                     val intent = Intent(this, Login::class.java)
                     startActivity(intent)
@@ -67,9 +63,7 @@ class NavbarActivity : AppCompatActivity() {
                 R.id.ho -> {
                     replaceFragment(home())
                 }
-                R.id.sett -> {
-                    replaceFragment(Settingspg())
-                }
+
                 R.id.prof -> {
                     replaceFragment(Profile())
                 }
@@ -78,6 +72,9 @@ class NavbarActivity : AppCompatActivity() {
                 }
                 R.id.chat -> {
                     replaceFragment(Messaging())
+                }
+                R.id.sett -> {
+                    replaceFragment(Settingspg())
                 }
             }
             true
