@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -19,18 +20,21 @@ class home : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Toast.makeText(requireContext(), "home Fragment: onCreate", Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Toast.makeText(requireContext(), "home Fragment: onCreateView", Toast.LENGTH_SHORT).show()
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Toast.makeText(requireContext(), "home Fragment: onViewCreated", Toast.LENGTH_SHORT).show()
 
         profileImageView = view.findViewById(R.id.pimg)
 
@@ -60,6 +64,31 @@ class home : Fragment() {
             progressBar.progress = progress.toInt()
             progressText.text = "${progressBar.progress}%"
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(requireContext(), "home Fragment: onStart", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(requireContext(), "home Fragment: onResume", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(requireContext(), "home Fragment: onPause", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(requireContext(), "home Fragment: onStop", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Toast.makeText(requireContext(), "home Fragment: onDestroyView", Toast.LENGTH_SHORT).show()
     }
 
     private fun replaceFragment(fragment: Fragment) {
